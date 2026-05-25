@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi TKJ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="phone-screen">
+    <!-- Header -->
+    <div class="header-blue" style="background-color: #0077b6;">
+        <h3><i class="fas fa-book"></i> Materi TKJ</h3>
+    </div>
+
+    <!-- Area Konten Materi -->
+    <div id="materi-container" style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        
+        <!-- Gambar Ilustrasi Buku -->
+        <div id="materi-image" style="width: 100%; height: 150px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 80px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px;">
+            📚
+        </div>
+
+        <div id="materi-content" style="flex-grow: 1;">
+            <h2 id="materi-title" style="color: #1e293b; margin-bottom: 10px;">Apa itu TKJ?</h2>
+            <p id="materi-text" style="color: #64748b; line-height: 1.6; font-size: 0.95rem;">
+                Teknik Komputer dan Jaringan (TKJ) adalah jurusan yang populer. Kamu akan belajar merakit PC, menginstall OS, hingga membangun server!
+            </p>
+        </div>
+
+        <!-- Indikator Halaman -->
+        <p id="page-indicator" style="color: #94a3b8; font-weight: bold; margin-bottom: 20px;">Halaman 1/5</p>
+
+        <!-- Tombol Navigasi -->
+        <div style="display: flex; gap: 10px; width: 100%;">
+            <button id="prevBtn" class="btn-blue" onclick="changePage(-1)" style="flex: 1; background-color: #cbd5e1; color: #475569;">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextBtn" class="btn-blue" onclick="changePage(1)" style="flex: 2;">
+                Halaman Berikutnya <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="padding: 15px; text-align: center; border-top: 1px solid #38b6ff33;">
+        <a href="index.html" style="color: #64748b; text-decoration: none; font-weight: 600; font-size: 0.8rem;">
+            <i class="fas fa-home"></i> Kembali ke Menu
+        </a>
+    </div>
+</div>
+
+<script>
+    const dataMateri = [
+        {
+            title: "Apa itu TKJ?",
+            text: "Teknik Komputer dan Jaringan (TKJ) adalah jurusan yang sangat populer. Di sini kamu akan belajar merakit PC, menginstall OS, hingga membangun server sendiri!",
+            img: "📚"
+        },
+        {
+            title: "Perangkat Keras",
+            text: "Kamu akan mempelajari komponen fisik komputer seperti Motherboard, CPU, RAM, dan Harddisk serta cara merakitnya dengan benar.",
+            img: "🖥️"
+        },
+        {
+            title: "Jaringan Dasar",
+            text: "Belajar tentang kabel UTP, konektor RJ-45, serta cara membuat jaringan LAN agar komputer bisa saling berkomunikasi.",
+            img: "🔌"
+        },
+        {
+            title: "Sistem Operasi",
+            text: "Menguasai instalasi Windows dan Linux, serta melakukan konfigurasi sistem agar perangkat siap digunakan untuk bekerja.",
+            img: "💿"
+        },
+        {
+            title: "Keamanan Jaringan",
+            text: "Mempelajari cara melindungi data dan jaringan dari serangan hacker, serta mengkonfigurasi Firewall pada router.",
+            img: "🔐"
+        }
+    ];
+
+    let currentPage = 0;
+
+    function changePage(step) {
+        currentPage += step;
+
+        // Validasi agar tidak keluar dari batas halaman
+        if (currentPage < 0) currentPage = 0;
+        if (currentPage >= dataMateri.length) currentPage = dataMateri.length - 1;
+
+        updateUI();
+    }
+
+    function updateUI() {
+        const item = dataMateri[currentPage];
+        
+        // Update Konten
+        document.getElementById('materi-title').innerText = item.title;
+        document.getElementById('materi-text').innerText = item.text;
+        document.getElementById('materi-image').innerText = item.img;
+        document.getElementById('page-indicator').innerText = `Halaman ${currentPage + 1}/${dataMateri.length}`;
+
+        // Atur tombol
+        document.getElementById('prevBtn').style.visibility = (currentPage === 0) ? "hidden" : "visible";
+        
+        const nextBtn = document.getElementById('nextBtn');
+        if (currentPage === dataMateri.length - 1) {
+            nextBtn.innerHTML = 'Selesai Membaca <i class="fas fa-check"></i>';
+            nextBtn.onclick = () => window.location.href = 'index.html';
+        } else {
+            nextBtn.innerHTML = 'Halaman Berikutnya <i class="fas fa-chevron-right"></i>';
+            nextBtn.onclick = () => changePage(1);
+        }
+    }
+
+    // Inisialisasi awal
+    updateUI();
+</script>
+
+</body>
+</html>

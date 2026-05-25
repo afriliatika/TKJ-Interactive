@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Level Kuis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .phone-screen {
+            width: 360px;
+            height: 740px;
+            border: 12px solid #000;
+            border-radius: 45px;
+            margin: 20px auto;
+            background-color: #e0f2fe;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+        .header {
+            background-color: #0077b6;
+            padding: 25px;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+        .header a { color: white; text-decoration: none; position: absolute; }
+        .header h3 { margin: 0; width: 100%; font-size: 1.2rem; }
+
+        .content {
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .level-card {
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #1e293b;
+            border: 2px solid transparent;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .level-card:hover { border-color: #0077b6; transform: translateY(-3px); }
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .lvl-1 { background: #38b6ff; }
+        .lvl-2 { background: #9333ea; }
+        
+        .level-info h4 { margin: 0; font-size: 1rem; }
+        .level-info p { margin: 0; font-size: 0.75rem; color: #64748b; }
+    </style>
+</head>
+<body>
+    <div class="phone-screen">
+        <div class="header">
+            <a href="index.html"><i class="fas fa-chevron-left"></i></a>
+            <h3>Pilih Level</h3>
+        </div>
+        <div class="content">
+            <p style="text-align: center; color: #475569; font-size: 0.9rem;">Pilih tingkat kesulitan kuis kamu:</p>
+            
+            <a href="kuis.html?level=1" class="level-card">
+                <div class="icon-box lvl-1"><i class="fas fa-star"></i></div>
+                <div class="level-info">
+                    <h4>Level 1 (Dasar)</h4>
+                    <p>5 Soal • Materi Dasar Jaringan</p>
+                </div>
+            </a>
+
+            <a href="kuis.html?level=2" class="level-card">
+                <div class="icon-box lvl-2"><i class="fas fa-bolt"></i></div>
+                <div class="level-info">
+                    <h4>Level 2 (Lanjut)</h4>
+                    <p>10 Soal • Perangkat & Subnetting</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

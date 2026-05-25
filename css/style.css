@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #f0f9ff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.phone-screen {
+    width: 360px;
+    height: 740px;
+    background-color: #dcf1ff; /* Biru muda cerah sesuai Canva */
+    border: 10px solid #ffffff;
+    border-radius: 40px;
+    position: relative;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* Header Biru Cerah */
+.header-blue {
+    background-color: #38b6ff;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Tombol Selanjutnya & Utama */
+.btn-blue {
+    background-color: #38b6ff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+/* Kotak Pilihan Kuis */
+.quiz-option {
+    background: white;
+    border: 2px solid #e2e8f0;
+    color: #1e293b;
+    padding: 15px;
+    margin: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+/* Efek Benar / Salah */
+.correct { background-color: #4ade80 !important; color: white; border-color: #22c55e; }
+.wrong { background-color: #f87171 !important; color: white; border-color: #ef4444; }
+
+/* Overlay Feedback (Ceklis/Silang) */
+#feedback-overlay {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+.icon-result { font-size: 80px; margin-bottom: 10px; }
+
+/* Ini adalah 'Bingkai HP' yang hilang itu */
+.phone-screen {
+    width: 360px;
+    height: 740px;
+    background-color: #dcf1ff; /* Warna latar biru muda cerah */
+    border: 12px solid #000000; /* Frame putih HP */
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; /* Supaya konten tidak keluar dari lengkungan HP */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    margin: 20px auto; /* Supaya posisi HP ada di tengah layar monitor */
+}
+
+/* Header yang kamu mau gelapin tadi */
+.header-blue {
+    background-color: #0077b6; /* Biru tua sesuai request kamu */
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Tombol Biru yang Seragam */
+.btn-blue {
+    background-color: #38b6ff;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+    border: none;
+    margin: 5px 0;
+}
+
+.btn-blue:hover {
+    background-color: #0096e6;
+}
+/* Animasi membal saat tombol ditekan (Klik/Sentuh) */
+.btn-blue:active, .video-item:active, .quiz-option:active {
+    transform: scale(0.95); /* Mengecil sedikit */
+    transition: 0.1s;
+    filter: brightness(0.9); /* Agak gelap dikit biar kelihatan dipencet */
+}
+
+/* Efek hover (saat kursor di atas tombol) */
+.btn-blue:hover, .video-item:hover {
+    transform: translateY(-2px); /* Naik sedikit */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+/* Animasi goyang (Wiggle) untuk tombol yang penting */
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Tambahkan class ini ke tombol kalau mau dia goyang terus-terusan */
+.wiggle-effect {
+    animation: wiggle 0.3s infinite;
+}
+
+body {
+    /* Gradasi Biru Gelap ke Hitam agar terlihat dalam */
+    background: radial-gradient(circle at center, #001a33 0%, #000b18 100%);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Efek Tulisan "TKJ" yang bercahaya */
+.judul-tkj {
+    font-size: 80px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 
+        0 0 10px #00d2ff,
+        0 0 20px #00d2ff,
+        0 0 40px #00d2ff; /* Efek Neon Glow */
+    letter-spacing: 5px;
+}
+

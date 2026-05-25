@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Pengenalan TKJ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .phone-screen {
+            width: 360px;
+            height: 740px;
+            border: 12px solid #000;
+            border-radius: 45px;
+            margin: 20px auto;
+            background: radial-gradient(circle, #001d3d 0%, #000814 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        /* Dekorasi Background */
+        .circuit-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            background-image: url('https://www.transparenttextures.com/patterns/circuit-board.png');
+            pointer-events: none;
+        }
+
+        /* Area Gambar Laptop & Jaringan */
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 30px;
+        }
+
+        .hero-img {
+            width: 200px;
+            filter: drop-shadow(0 0 20px #38b6ff);
+        }
+
+        /* Teks Sesuai Permintaan */
+        .title-area {
+            z-index: 2;
+            margin-top: 10px;
+        }
+
+        .welcome-text {
+            font-size: 1rem;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            font-weight: 300;
+            color: #e2e8f0;
+        }
+
+        .main-title {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin: 0;
+            font-weight: 600;
+            color: white;
+        }
+
+        .brand-title {
+            font-size: 4rem; /* TKJ Besar */
+            margin: -10px 0;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 0 30px rgba(56, 182, 255, 0.8);
+        }
+
+        .sub-title {
+            font-size: 0.85rem;
+            color: #38b6ff;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Loading Bar Area */
+        .loading-container {
+            width: 80%;
+            margin-top: 60px;
+            z-index: 2;
+        }
+
+        .loading-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+            color: #94a3b8;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #38b6ff, #9333ea);
+            box-shadow: 0 0 15px #38b6ff;
+            animation: fillProgress 3.5s forwards;
+        }
+
+        @keyframes fillProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .hint {
+            margin-top: 25px;
+            font-size: 0.7rem;
+            color: #475569;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+    </style>
+</head>
+<body>
+
+<div class="phone-screen" onclick="window.location.href='index.html'">
+    <div class="circuit-bg"></div>
+
+    <!-- Gambar Laptop & Jaringan -->
+    <div class="hero-container">
+        <img src="https://cdn-icons-png.flaticon.com/512/3067/3067260.png" alt="Laptop Jaringan" class="hero-img">
+    </div>
+
+    <!-- Teks Kapital Semua Sesuai Gambar -->
+    <div class="title-area">
+        <p class="welcome-text">SELAMAT DATANG</p>
+        <h2 class="main-title">PENGENALAN</h2>
+        <h1 class="brand-title">TKJ</h1>
+        <p class="sub-title">TEKNIK KOMPUTER & JARINGAN</p>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="loading-container">
+        <div class="loading-info">
+            <span>Loading...</span>
+            <span>100%</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <p class="hint">KLIK LAYAR UNTUK MEMULAI</p>
+</div>
+
+</body>
+</html>

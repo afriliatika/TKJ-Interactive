@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Utama - Pengenalan TKJ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS UNTUK FRAME HP */
+        .phone-screen {
+            width: 360px;
+            height: 740px;
+            border: 12px solid #000;
+            border-radius: 45px;
+            margin: 20px auto;
+            background-color: #e0f2fe;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            font-family: 'Poppins', sans-serif, Arial;
+        }
+
+        /* HEADER DENGAN GRADASI MEWAH */
+        .hero-section {
+            background: linear-gradient(135deg, #0077b6 0%, #38b6ff 100%);
+            padding: 35px 20px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 5px 20px rgba(0,119,182,0.3);
+        }
+
+        .welcome-text {
+            font-size: 1.1rem;
+            margin: 0;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 5px 0 0 0;
+            text-transform: uppercase;
+        }
+
+        /* ILUSTRASI HARDWARE MELAYANG */
+        .illustration-container {
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 180px;
+        }
+
+        .hardware-circle {
+            width: 140px;
+            height: 140px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .main-icon {
+            font-size: 60px;
+            color: #0077b6;
+        }
+
+        .sub-icon {
+            position: absolute;
+            background: #38b6ff;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .icon-1 { top: -5px; right: -5px; animation-delay: 0s; }
+        .icon-2 { bottom: 10px; right: -15px; animation-delay: 0.5s; }
+        .icon-3 { bottom: 10px; left: -15px; animation-delay: 1s; }
+        .icon-4 { top: -5px; left: -5px; animation-delay: 1.5s; }
+
+        /* MENU BUTTONS LENGKAP */
+        .scroll-menu {
+            flex-grow: 1;
+            padding: 10px 25px;
+            overflow-y: auto;
+        }
+
+        /* Custom Scrollbar */
+        .scroll-menu::-webkit-scrollbar { width: 0px; }
+
+        .btn-menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #38b6ff;
+            padding: 16px 20px;
+            border-radius: 18px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(56, 182, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-menu:hover {
+            transform: scale(1.03) translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        .menu-content { display: flex; align-items: center; }
+        .menu-content i { margin-right: 15px; font-size: 1.2rem; width: 25px; text-align: center; }
+
+        /* Tombol Keluar Khusus Merah */
+        .btn-exit {
+            background: #ff6b6b;
+            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer-info {
+            text-align: center;
+            padding: 15px;
+            color: #64748b;
+            font-size: 0.75rem;
+            background: rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>
+
+<div class="phone-screen">
+    <!-- Header Baru -->
+    <div class="hero-section">
+        <p class="welcome-text">Selamat Datang di</p>
+        <h1 class="main-title">Pengenalan TKJ</h1>
+    </div>
+
+    <!-- Gambar Hardware Update -->
+    <div class="illustration-container">
+        <div class="hardware-circle">
+            <i class="fas fa-network-wired main-icon"></i>
+            <div class="sub-icon icon-1"><i class="fas fa-server"></i></div>
+            <div class="sub-icon icon-2"><i class="fas fa-wifi"></i></div>
+            <div class="sub-icon icon-3"><i class="fas fa-ethernet"></i></div>
+            <div class="sub-icon icon-4"><i class="fas fa-cloud"></i></div>
+        </div>
+    </div>
+
+    <!-- Tombol Menu Lengkap -->
+    <div class="scroll-menu">
+        <a href="materi.html" class="btn-menu">
+            <div class="menu-content"><i class="fas fa-book"></i> Materi TKJ</div>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+        
+        <a href="video.html" class="btn-menu">
+            <div class="menu-content"><i class="fas fa-play-circle"></i> Video Pembelajaran</div>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+
+        <a href="pilih-level.html" class="btn-menu">
+    <div class="menu-content"><i class="fas fa-list-ul"></i> Kuis TKJ</div>
+    <i class="fas fa-chevron-right"></i>
+</a>
+
+        <a href="tentang.html" class="btn-menu">
+            <div class="menu-content"><i class="fas fa-info-circle"></i> Tentang Aplikasi</div>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+
+        <a href="login.html" class="btn-menu btn-exit">
+            <div class="menu-content"><i class="fas fa-sign-out-alt"></i> Keluar</div>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-info">
+        v1.0 - Media Belajar Interaktif TKJ
+    </div>
+</div>
+
+</body>
+</html>
